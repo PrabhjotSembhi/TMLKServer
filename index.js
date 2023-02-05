@@ -8,7 +8,7 @@ const cloudinary = require("cloudinary").v2;
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
-const port = 5000;
+const port =  5000;
 
 cloudinary.config({
   cloud_name: "dnvblgp76",
@@ -97,12 +97,12 @@ app.get("/artworks", async (req, res) => {
     if (err) {
       console.log(err)
     }else{
-      res.json(result)
+      res.json('result')
     }
   })
 })
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening on port ${port}`);
 });
